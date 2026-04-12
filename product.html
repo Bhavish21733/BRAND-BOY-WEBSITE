@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>BRAND BOY | Product Detail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        background: #f6f9fb;
+        font-family: 'Inter', system-ui, sans-serif;
+        margin: 0;
+        color: #23272a;
+        min-height: 100vh;
+      }
+
+      .site-header {
+        background: #fff;
+        box-shadow: 0 1px 6px rgba(40,116,240, 0.04), 0 1.5px 4px rgba(0,0,0,0.02);
+      }
+
+      .product-container {
+        max-width: 1020px;
+        margin: 58px auto;
+        background: #fff;
+        border-radius: 14px;
+        box-shadow: 0 6px 16px rgba(40,116,240,0.08), 0 1.5px 4px rgba(0,0,0,0.03);
+        display: flex;
+        gap: 44px;
+        padding: 42px 38px 38px 38px;
+      }
+      @media (max-width: 850px) {
+        .product-container {
+          flex-direction: column;
+          padding: 34px 10px;
+        }
+      }
+      .product-image {
+        flex: 1 1 360px;
+        max-width: 420px;
+        min-width: 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        background: #f3f7ff;
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 24px;
+      }
+      .product-image img {
+        width: 100%;
+        max-width: 340px;
+        border-radius: 7px;
+        object-fit: cover;
+        background: #e4ecfa;
+      }
+      .product-details {
+        flex: 2 1 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .product-brand {
+        font-size: 15px;
+        color: #2874f0;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+      .product-name {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 6px;
+        color: #22396b;
+      }
+      .product-price {
+        font-size: 1.45rem;
+        font-weight: 600;
+        color: #2874f0;
+        margin-right: 18px;
+      }
+      .product-discount {
+        font-size: 1.12rem;
+        color: #ef4a3c;
+        font-weight: 600;
+        margin-left: 9px;
+      }
+      .old-price {
+        color: #878787;
+        text-decoration: line-through;
+        font-weight: 400;
+        margin-left: 12px;
+      }
+      .product-rating {
+        margin: 0.5rem 0 1.2rem 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 1rem;
+      }
+      .product-rating .stars {
+        color: #fabb05;
+        font-size: 1.11rem;
+      }
+      .product-desc {
+        font-size: 1.15rem;
+        line-height: 1.6;
+        margin-bottom: 1.65rem;
+        color: #283c55;
+      }
+      .product-actions {
+        display: flex;
+        gap: 18px;
+        margin-top: 18px;
+      }
+      .btn {
+        border: none;
+        padding: 13px 30px;
+        font-size: 1.13rem;
+        font-weight: 600;
+        border-radius: 100px;
+        cursor: pointer;
+        transition: background 0.18s, box-shadow 0.18s;
+        box-shadow: 0 2px 7px 0 rgba(40,116,240,0.07);
+      }
+      .btn-cart {
+        background: #2874f0;
+        color: #fff;
+      }
+      .btn-cart:hover {
+        background: #215cbe;
+      }
+      .btn-whatsapp {
+        background: #21af5e;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+      .btn-whatsapp:hover {
+        background: #168f4c;
+      }
+      .btn-whatsapp svg {
+        width: 21px;
+        height: 21px;
+        vertical-align: middle;
+      }
+      @media (max-width: 730px) {
+        .product-container {
+          gap: 24px;
+          padding: 16px 0;
+        }
+        .product-actions {
+          flex-direction: column;
+          gap: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header" role="banner">
+      <div class="header-inner container" style="max-width: 1020px; margin: 0 auto; display: flex; align-items:center; justify-content: space-between; padding: 24px 0 18px 0;">
+        <a href="index.html" class="logo" style="color:#2874f0; font-size:2rem; font-weight:800; text-decoration:none; letter-spacing:1px;" aria-label="BRAND BOY home">BRAND BOY</a>
+        <nav class="primary-nav" aria-label="Main menu">
+          <ul class="primary-nav__list" style="display:flex; gap:36px; list-style:none; margin:0; padding:0;">
+            <li><a href="index.html#hero" class="primary-nav__link" style="text-decoration:none;color:#22396b;font-weight:600;">Home</a></li>
+            <li><a href="index.html#category-shirts" class="primary-nav__link" style="text-decoration:none;color:#22396b;font-weight:600;">Shirts</a></li>
+            <li><a href="index.html#category-jeans" class="primary-nav__link" style="text-decoration:none;color:#22396b;font-weight:600;">Jeans</a></li>
+            <li><a href="index.html#category-tshirts" class="primary-nav__link" style="text-decoration:none;color:#22396b;font-weight:600;">T-Shirts</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="product-container">
+        <div class="product-image">
+          <img id="product-img" src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80" alt="Premium Navy Cotton Shirt"/>
+        </div>
+        <div class="product-details">
+          <span class="product-brand">BRAND BOY</span>
+          <h1 class="product-name" id="product-name">Premium Navy Cotton Shirt</h1>
+          <div>
+            <span class="product-price" id="product-price">₹1,199</span>
+            <span class="old-price" id="product-old-price">₹1,499</span>
+            <span class="product-discount" id="product-discount">20% OFF</span>
+          </div>
+          <div class="product-rating">
+            <span class="stars" aria-label="Rated 4.3 out of 5 stars">
+              &#9733;&#9733;&#9733;&#9733;&#189;
+            </span>
+            <span id="rating-score">4.3</span>
+            <span style="color: #868a95;">(211 ratings)</span>
+          </div>
+          <div class="product-desc" id="product-desc">
+            Step up your style with this crisp navy blue shirt crafted from soft, breathable 100% premium cotton. Perfect for work or evenings out, our modern tailored fit ensures all-day comfort with sharp looks. Easy machine-wash, made to last.
+          </div>
+          <div class="product-actions">
+            <button class="btn btn-cart" id="add-to-cart-btn">Add to Cart</button>
+            <a class="btn btn-whatsapp" id="buy-now-btn" href="#" target="_blank" rel="noopener">
+              <svg viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="16" fill="#fff"/>
+                <path fill="#25D366" d="M16 4a12 12 0 1 1-6.84 21.93l-5.65 1.65 1.77-5.52A12 12 0 0 1 16 4zm0-2C8.27 2 2 8.27 2 16c0 2.47.66 4.82 1.9 6.93L2 30l7.27-2.13A13.93 13.93 0 0 0 16 30c7.73 0 14-6.27 14-14S23.73 2 16 2zm6.63 18.57-.02.04c-.18.51-.9.97-1.26.97-.21 0-.46-.03-.75-.14-1.43-.51-2.63-1.46-3.77-2.62-.95-.96-1.76-1.99-2.5-3.17-.36-.56-.18-1.16.15-1.55l.65-.81c.17-.2.36-.37.67-.3.19.04.36.12.49.33l.51.87c.17.25.18.39.09.62-.07.2-.32.5-.25.76.08.3.75 1.22 1.4 1.86.64.64 1.56 1.35 1.85 1.44.25.07.57-.18.77-.26.24-.09.36-.06.62.11l.86.5c.2.13.29.29.33.48.07.31-.1.5-.29.68l-.81.63z"/>
+              </svg>
+              Buy Now via WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" 
+      style="position: fixed; z-index: 5000; bottom: 28px; left: 50%;transform:translateX(-50%);
+        background: #2874f0; color:#fff;padding:12px 26px; border-radius:100px; font-size:1rem; opacity:0; pointer-events:none;
+        transition:opacity .35s;">
+      <!-- For toast notifications -->
+    </div>
+    <script>
+      // Example static product data for this page
+      const product = {
+        id: "navy-cotton-shirt-01",
+        name: "Premium Navy Cotton Shirt",
+        price: 1199,
+        oldPrice: 1499,
+        discount: 20,
+        imageUrl: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80",
+        rating: 4.3,
+        ratingCount: 211,
+        desc: "Step up your style with this crisp navy blue shirt crafted from soft, breathable 100% premium cotton. Perfect for work or evenings out, our modern tailored fit ensures all-day comfort with sharp looks. Easy machine-wash, made to last.",
+      };
+
+      // Format INR (matching homepage)
+      function formatRupee(n) {
+        return "₹" + Number(n).toLocaleString("en-IN");
+      }
+
+      // Set product details
+      document.getElementById("product-img").src = product.imageUrl;
+      document.getElementById("product-img").alt = product.name;
+      document.getElementById("product-name").textContent = product.name;
+      document.getElementById("product-price").textContent = formatRupee(product.price);
+      document.getElementById("product-old-price").textContent = formatRupee(product.oldPrice);
+      document.getElementById("product-discount").textContent = product.discount + "% OFF";
+      document.getElementById("rating-score").textContent = product.rating.toFixed(1);
+      document.querySelector(".product-rating span[style]").textContent = `(${product.ratingCount} ratings)`;
+      document.getElementById("product-desc").textContent = product.desc;
+
+      // WhatsApp number (matching homepage)
+      const WHATSAPP = "919876543210";
+      function whatsappBuyUrl(productName) {
+        const text = `Hi BRAND BOY, I want to buy: ${productName}`;
+        return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
+      }
+      document.getElementById("buy-now-btn").href = whatsappBuyUrl(product.name);
+
+      // Cart logic (matches homepage)
+      const CART_KEY = "brandBoyCart";
+      function loadCart() {
+        try {
+          const raw = localStorage.getItem(CART_KEY);
+          if (raw) {
+            const data = JSON.parse(raw);
+            if (Array.isArray(data)) return data;
+          }
+        } catch (_) {}
+        return [];
+      }
+      function saveCart(items) {
+        localStorage.setItem(CART_KEY, JSON.stringify(items));
+      }
+      function showToast(message) {
+        const el = document.getElementById("toast");
+        if (!el) return;
+        el.textContent = message;
+        el.style.opacity = 1;
+        el.style.pointerEvents = 'auto';
+        clearTimeout(showToast._t);
+        showToast._t = setTimeout(() => {
+          el.style.opacity = 0;
+          el.style.pointerEvents = 'none';
+        }, 2000);
+      }
+
+      document.getElementById("add-to-cart-btn").onclick = function() {
+        let cart = loadCart();
+        // Try to find if already in cart and increment qty
+        let found = cart.find(item => item.id === product.id);
+        if (found) {
+          found.qty = (found.qty || 1) + 1;
+        } else {
+          cart.push({id: product.id, name: product.name, price: product.price, imageUrl: product.imageUrl, qty: 1});
+        }
+        saveCart(cart);
+        showToast("Added to cart!");
+      };
+    </script>
+  </body>
+</html>

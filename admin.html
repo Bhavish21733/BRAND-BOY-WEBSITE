@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BRAND BOY Admin Panel</title>
+  <style>
+    body {
+      background: #f6f9fb;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #23272a;
+      margin: 0;
+      min-height: 100vh;
+    }
+    .admin-container {
+      max-width: 540px;
+      margin: 50px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 6px 16px rgba(40,116,240,0.08), 0 1.5px 4px rgba(0,0,0,0.03);
+      padding: 32px 28px;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 26px;
+      font-weight: 700;
+      color: #2874f0;
+      letter-spacing: 1px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 34px;
+    }
+    .field-row {
+      display: flex;
+      gap: 14px;
+    }
+    label {
+      font-size: 15px;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 6px;
+      color: #295bac;
+    }
+    input, select {
+      padding: 8px 10px;
+      font-size: 15px;
+      border: 1px solid #e0e0e0;
+      border-radius: 5px;
+      outline: none;
+      background: #f7fafc;
+      transition: border 0.2s;
+    }
+    input:focus, select:focus {
+      border-color: #2874f0;
+      background: #fff;
+    }
+    button[type="submit"] {
+      background: #2874f0;
+      color: #fff;
+      font-weight: 600;
+      border: none;
+      padding: 10px 0;
+      border-radius: 5px;
+      letter-spacing: 1px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 2px 7px rgba(40,116,240,0.08);
+      margin-top: 6px;
+      transition: background 0.18s;
+    }
+    button[type="submit"]:hover {
+      background: #215eab;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      margin-top: 10px;
+    }
+    th, td {
+      padding: 12px 8px;
+      text-align: left;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 15px;
+    }
+    th {
+      background: #f4f6fb;
+      color: #2874f0;
+      font-weight: 600;
+    }
+    td img {
+      width: 54px;
+      height: 54px;
+      object-fit: cover;
+      border-radius: 5px;
+      border: 1px solid #ececec;
+    }
+    .delete-btn {
+      background: #fff0f0;
+      border: 1px solid #fd9191;
+      color: #da2222;
+      font-size: 14px;
+      padding: 5px 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.15s, color 0.15s;
+    }
+    .delete-btn:hover {
+      background: #ffdad7;
+      color: #9b1313;
+    }
+    @media (max-width: 680px) {
+      .admin-container {
+        padding: 13vw 4vw;
+      }
+      th, td { font-size: 14px; }
+      td img { width: 44px; height: 44px; }
+    }
+    .empty-table {
+      text-align: center;
+      color: #888;
+      padding: 25px 0 21px 0;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <h1>BRAND BOY Admin</h1>
+    <form id="product-form" autocomplete="off">
+      <div>
+        <label for="name">Product Name</label>
+        <input id="name" name="name" required maxlength="64" placeholder="e.g. Premium Oxford Shirt"/>
+      </div>
+      <div class="field-row">
+        <div style="flex:1;">
+          <label for="price">Price (₹)</label>
+          <input type="number" id="price" name="price" required min="1" max="99999" placeholder="1999"/>
+        </div>
+        <div style="flex:2;">
+          <label for="imageUrl">Image URL</label>
+          <input id="imageUrl" name="imageUrl" type="url" required placeholder="https://...jpg"/>
+        </div>
+      </div>
+      <div>
+        <label for="category">Category</label>
+        <select id="category" name="category" required>
+          <option value="" disabled selected>Select category</option>
+          <option value="Shirts">Shirts</option>
+          <option value="T-Shirts">T-Shirts</option>
+          <option value="Jeans">Jeans</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <button type="submit">Add Product</button>
+    </form>
+
+    <table id="products-table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th style="text-align:center;">Delete</th>
+        </tr>
+      </thead>
+      <tbody id="products-body">
+        <tr><td colspan="5" class="empty-table">Loading products...</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    const STORAGE_KEY = "brandBoyProducts";
+    function loadProducts() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return [];
+        const arr = JSON.parse(raw);
+        return Array.isArray(arr) ? arr : [];
+      } catch (_){ return []; }
+    }
+    function saveProducts(list) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+    }
+    function clearForm(form) {
+      form.reset();
+      form.category.selectedIndex = 0;
+    }
+
+    function renderProducts() {
+      const products = loadProducts();
+      const body = document.getElementById("products-body");
+      if (!products.length) {
+        body.innerHTML = `<tr><td colspan="5" class="empty-table">No products added yet.</td></tr>`;
+        return;
+      }
+      body.innerHTML = "";
+      products.forEach((p, i) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td><img src="${p.imageUrl}" alt="${p.name}"/></td>
+          <td>${p.name}</td>
+          <td>₹${Number(p.price).toLocaleString("en-IN")}</td>
+          <td>${p.category}</td>
+          <td style="text-align:center;">
+            <button class="delete-btn" data-id="${i}" title="Delete">&#128465;</button>
+          </td>
+        `;
+        body.appendChild(tr);
+      });
+    }
+
+    document.getElementById("product-form").addEventListener("submit", function(e){
+      e.preventDefault();
+      const name = this.name.value.trim();
+      const price = Number(this.price.value);
+      const imageUrl = this.imageUrl.value.trim();
+      const category = this.category.value;
+
+      if (!name || !price || !imageUrl || !category) return;
+
+      const products = loadProducts();
+      products.push({ name, price, imageUrl, category });
+      saveProducts(products);
+      renderProducts();
+      clearForm(this);
+    });
+
+    document.getElementById("products-table").addEventListener("click", function(e){
+      const btn = e.target.closest(".delete-btn");
+      if (!btn) return;
+      if (!confirm("Delete this product?")) return;
+      const idx = Number(btn.dataset.id);
+      let products = loadProducts();
+      products.splice(idx, 1);
+      saveProducts(products);
+      renderProducts();
+    });
+
+    // Initial render
+    renderProducts();
+  </script>
+</body>
+</html>

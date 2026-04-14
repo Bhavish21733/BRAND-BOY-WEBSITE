@@ -150,13 +150,13 @@
           </button>
         </form>
 
-        <nav class="primary-nav">
+        <nav class="primary-nav" aria-label="Main menu">
           <ul class="primary-nav__list">
-            <li><a href="index.html" class="primary-nav__link">Home</a></li>
-            <li><a href="shirts.html" class="primary-nav__link">Shirts</a></li>
-            <li><a href="tshirts.html" class="primary-nav__link">T-Shirts</a></li>
-            <li><a href="jeans.html" class="primary-nav__link">Jeans</a></li>
-            <li><a href="contact.html" class="primary-nav__link">Contact</a></li>
+            <li><a href="#hero" class="primary-nav__link">Home</a></li>
+            <li><a href="#category-shirts" class="primary-nav__link">Shirts</a></li>
+            <li><a href="#category-tshirts" class="primary-nav__link">T-Shirts</a></li>
+            <li><a href="#category-jeans" class="primary-nav__link">Jeans</a></li>
+            <li><a href="#contact" class="primary-nav__link">Contact</a></li>
           </ul>
         </nav>
 
@@ -342,7 +342,7 @@
               data-name="Minimal White Tee"
               data-price="599"
               data-compare="999"
-              data-category="t-shirts"
+              data-category="shirts"
             >
               <a href="#" class="product-card__media-link" aria-label="Minimal White Tee">
                 <div class="product-card__media">
@@ -384,7 +384,7 @@
               data-name="Slim Taper Jeans — Black"
               data-price="1299"
               data-compare="2499"
-              data-category="jeans"
+              data-category="shirts"
             >
               <a href="#" class="product-card__media-link" aria-label="Slim Taper Jeans Black">
                 <div class="product-card__media">
@@ -468,7 +468,7 @@
               data-name="Street Graphic Tee"
               data-price="799"
               data-compare="1299"
-              data-category="t-shirts"
+              data-category="shirts"
             >
               <a href="#" class="product-card__media-link" aria-label="Street Graphic Tee">
                 <div class="product-card__media">
@@ -504,13 +504,8 @@
             </article>
 
             <article
-              class="product-card"
-              role="listitem"
-              data-product-id="bb-denim-blue"
-              data-name="Classic Blue Denim"
-              data-price="999"
-              data-compare="2199"
-              data-category="jeans"
+              <!-- Removed: Only shirt products should be displayed. This product card (jeans) is omitted as per requirements. -->
+    
             >
               <a href="#" class="product-card__media-link" aria-label="Classic Blue Denim">
                 <div class="product-card__media">

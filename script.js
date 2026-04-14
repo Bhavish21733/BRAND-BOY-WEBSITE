@@ -329,4 +329,13 @@ document.addEventListener("click", function (e) {
       window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`);
     }
   
+    const elements = document.querySelectorAll('.fade-in');
+
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      el.classList.add('show');
+    }
   });
+});

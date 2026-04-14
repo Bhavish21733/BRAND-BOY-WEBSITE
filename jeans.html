@@ -149,16 +149,15 @@
             </svg>
           </button>
         </form>
-
         <nav class="primary-nav">
-          <ul class="primary-nav__list">
-            <li><a href="index.html" class="primary-nav__link">Home</a></li>
-            <li><a href="shirts.html" class="primary-nav__link">Shirts</a></li>
-            <li><a href="tshirts.html" class="primary-nav__link">T-Shirts</a></li>
-            <li><a href="jeans.html" class="primary-nav__link">Jeans</a></li>
-            <li><a href="contact.html" class="primary-nav__link">Contact</a></li>
-          </ul>
-        </nav>
+            <ul class="primary-nav__list">
+              <li><a href="index.html" class="primary-nav__link">Home</a></li>
+              <li><a href="shirts.html" class="primary-nav__link">Shirts</a></li>
+              <li><a href="tshirts.html" class="primary-nav__link">T-Shirts</a></li>
+              <li><a href="jeans.html" class="primary-nav__link">Jeans</a></li>
+              <li><a href="contact.html" class="primary-nav__link">Contact</a></li>
+            </ul>
+          </nav>
 
         <button type="button" class="cart-toggle" id="cart-toggle" aria-label="Open cart" aria-expanded="false">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -649,6 +648,77 @@
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
+
+      <!-- PRODUCT GRID: Jeans Only -->
+      <section class="product-section" aria-labelledby="jeans-section-title">
+        <div class="container">
+          <h2 class="product-section__title" id="jeans-section-title">Jeans Collection</h2>
+          <div class="product-grid" id="product-grid">
+            <!-- Only JEANS product cards are included below -->
+            <article class="product-card"
+              data-product-id="jeans1"
+              data-name="Slim Fit Blue Jeans"
+              data-price="1599"
+              data-category="jeans">
+              <div class="product-card__media">
+                <img src="assets/jeans-blue.jpg" alt="Slim Fit Blue Jeans">
+              </div>
+              <div class="product-card__body">
+                <h3 class="product-card__title">Slim Fit Blue Jeans</h3>
+                <div class="product-card__price-row">
+                  <span class="product-card__price">₹1599</span>
+                </div>
+                <div class="product-card__actions">
+                  <button class="btn btn--outline btn--sm add-to-cart">Add to Cart</button>
+                  <button class="btn btn--primary btn--sm buy-now">Buy Now</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card"
+              data-product-id="jeans2"
+              data-name="Regular Fit Black Jeans"
+              data-price="1699"
+              data-category="jeans">
+              <div class="product-card__media">
+                <img src="assets/jeans-black.jpg" alt="Regular Fit Black Jeans">
+              </div>
+              <div class="product-card__body">
+                <h3 class="product-card__title">Regular Fit Black Jeans</h3>
+                <div class="product-card__price-row">
+                  <span class="product-card__price">₹1699</span>
+                </div>
+                <div class="product-card__actions">
+                  <button class="btn btn--outline btn--sm add-to-cart">Add to Cart</button>
+                  <button class="btn btn--primary btn--sm buy-now">Buy Now</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card"
+              data-product-id="jeans3"
+              data-name="Classic Blue Distressed Jeans"
+              data-price="1799"
+              data-category="jeans">
+              <div class="product-card__media">
+                <img src="assets/jeans-distressed.jpg" alt="Classic Blue Distressed Jeans">
+              </div>
+              <div class="product-card__body">
+                <h3 class="product-card__title">Classic Blue Distressed Jeans</h3>
+                <div class="product-card__price-row">
+                  <span class="product-card__price">₹1799</span>
+                </div>
+                <div class="product-card__actions">
+                  <button class="btn btn--outline btn--sm add-to-cart">Add to Cart</button>
+                  <button class="btn btn--primary btn--sm buy-now">Buy Now</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Add more jeans <article> cards here as desired, with data-category="jeans" -->
+          </div>
+        </div>
+      </section>
     </div>
   </section>
     </footer>

@@ -146,33 +146,6 @@ function escapeHtml(s) {
     .replace(/"/g, "&quot;");
 }
 
-function initProductActions() {
-  document.querySelectorAll(".product-card").forEach((card) => {
-    const id = card.getAttribute("data-product-id");
-    const name = card.getAttribute("data-name");
-    const price = Number(card.getAttribute("data-price"));
-
-    card.querySelector(".add-to-cart")?.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      if (!id || !name || Number.isNaN(price)) return;
-      const items = loadCart();
-      const existing = items.find((i) => i.id === id);
-      if (existing) existing.qty = (existing.qty || 1) + 1;
-      else items.push({ id, name, price, qty: 1 });
-      saveCart(items);
-      window.dispatchEvent(new Event("brandboy:cart-updated"));
-      showToast("Added to cart");
-    });
-
-    card.querySelector(".buy-now")?.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      if (!name) return;
-      window.open(whatsappBuyUrl(name), "_blank", "noopener,noreferrer");
-    });
-  });
-}
 
 function initSearch() {
   const form = document.querySelector(".search-form");
@@ -291,51 +264,103 @@ function loadAdminProducts() {
   
   // CALL FUNCTION
   loadAdminProducts();
-
-// Wait a bit, then attach events again
-setTimeout(() => {
-  initProductActions();
-}, 100);
-  // HANDLE DYNAMIC BUTTON CLICKS (IMPORTANT)
-document.addEventListener("click", function (e) {
-
-    // ADD TO CART
-    if (e.target.classList.contains("add-to-cart")) {
-      const card = e.target.closest(".product-card");
+initProductActions();
+  function initProductActions() {
+    document.querySelectorAll(".product-card").forEach((card) => {
   
-      const name = card.querySelector(".product-card__title")?.innerText || "Product";
-      const priceText = card.querySelector(".product-card__price")?.innerText || "₹0";
+      const id = card.dataset.productId;
+      const name = card.dataset.name;
+      const price = Number(card.dataset.price);
+      const image = card.querySelector("img")?.src;
   
-      const price = parseInt(priceText.replace("₹", ""));
+      const qtyInput = card.querySelector(".qty-input");
   
-      const fakeButton = document.createElement("button");
-
-      fakeButton.dataset.name = name;
-      fakeButton.dataset.price = price;
-      
-      addToCart(fakeButton);
-    }
+      // ADD TO CART
+      card.querySelector(".add-to-cart")?.addEventListener("click", () => {
   
-    // BUY NOW
-    if (e.target.classList.contains("buy-now")) {
-      const card = e.target.closest(".product-card");
+        let qty = qtyInput ? parseInt(qtyInput.value) : 1;
+        if (isNaN(qty) || qty < 1) qty = 1;
   
-      const name = card.querySelector(".product-card__title")?.innerText || "Product";
+        let items = JSON.parse(localStorage.getItem("brandBoyCart") || "[]");
   
-      const phone = "918688641066"; // your number
+        let existing = items.find(i => i.id === id);
   
-      const message = `Hi BRAND BOY, I want to order: ${name}`;
+        if (existing) {
+          existing.qty += qty;
+        } else {
+          items.push({ id, name, price, qty });
+        }
   
-      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`);
-    }
+        localStorage.setItem("brandBoyCart", JSON.stringify(items));
   
-    const elements = document.querySelectorAll('.fade-in');
-
-window.addEventListener('scroll', () => {
-  elements.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 50) {
-      el.classList.add('show');
-    }
+        showToast("Added to cart");
+        window.dispatchEvent(new Event("brandboy:cart-updated"));
+      });
+  
+      // BUY NOW → WHATSAPP
+      card.querySelector(".buy-now")?.addEventListener("click", () => {
+  
+        let qty = qtyInput ? parseInt(qtyInput.value) : 1;
+        if (isNaN(qty) || qty < 1) qty = 1;
+  
+        const message =
+  `🛍️ *BRAND BOY ORDER*
+  
+  ━━━━━━━━━━━━━━━
+  👕 *Product:* ${name}
+  💰 *Price:* ₹${price}
+  📦 *Quantity:* ${qty}
+  
+  🖼️ *Product Image:*
+  ${image}
+  
+  ━━━━━━━━━━━━━━━
+  📍 *Customer Details:*
+  Name:
+  Address:
+  
+  ✅ Please confirm availability.`;
+  
+        window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`, "_blank");
+      });
+  
+    });
+  }
+  document.querySelectorAll('[data-category]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+  
+      const category = link.getAttribute('data-category');
+  
+      // REMOVE active from all
+      document.querySelectorAll('.primary-nav__link').forEach(l => {
+        l.classList.remove('active');
+      });
+  
+      // ADD active to clicked
+      link.classList.add('active');
+  
+      // scroll
+      document.getElementById('featured').scrollIntoView({
+        behavior: 'smooth'
+      });
+  
+      // filter
+      document.querySelectorAll('.product-card').forEach(card => {
+        const cat = card.getAttribute('data-category');
+  
+        if (category === 'all' || cat === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
   });
-});
+  document.querySelectorAll('a[href="index.html"], a[href="#hero"]').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelectorAll('.product-card').forEach(card => {
+        card.style.display = 'block';
+      });
+    });
+  });

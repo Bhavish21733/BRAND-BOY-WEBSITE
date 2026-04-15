@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cedentic Technologies | Empowering Digital Growth</title>
+  <link rel="icon" href="logo.jpg" type="Cedentic Technologies Logo">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="header-logo" aria-label="Cedentic Technologies Home">
+        <img src="logo.jpg" alt="Cedentic Technologies" />
+      </a>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link active">
+          <span class="nav-icon">🏠</span>
+          <span>Home</span>
+        </a>
+        <a href="services.html" class="nav-link">
+          <span class="nav-icon">🛠️</span>
+          <span>Services</span>
+        </a>
+        <a href="contact.html" class="nav-link">
+          <span class="nav-icon">✉️</span>
+          <span>Contact</span>
+        </a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <img src="logo.jpg" alt="Cedentic Technologies Logo" class="hero-logo" />
+        <h1 class="hero-title">Cedentic Technologies</h1>
+        <p class="hero-subtitle">Empowering Digital Growth</p>
+        <p class="hero-services">Web Development <span class="dot">•</span> IT Consulting <span class="dot">•</span> Digital Marketing</p>
+        <a href="contact.html" class="cta-btn">Get Started</a>
+      </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="stats-section">
+      <div class="stats-cards">
+        <div class="stat-card">
+          <span class="stat-value">100+</span>
+          <span class="stat-label">Projects Completed</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">50+</span>
+          <span class="stat-label">Clients</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">200+</span>
+          <span class="stat-label">Students Mentored</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST SECTION -->
+    <section class="trust-section">
+      <blockquote class="trust-text">
+        Trusted by growing businesses across India
+      </blockquote>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-section">
+      <h2 class="why-title">Why Choose Us</h2>
+      <div class="why-cards">
+        <div class="why-card">
+          <div class="why-icon">⚡</div>
+          <div class="why-text">Fast Delivery</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">💸</div>
+          <div class="why-text">Affordable Pricing</div>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🤝</div>
+          <div class="why-text">Quality Support</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/918688641066?text=Hi%20Cedentic%20Technologies%2C%20I%20would%20like%20to%20connect!" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp Chat">
+    <svg viewBox="0 0 32 32" width="1.4em" height="1.4em" fill="currentColor" aria-hidden="true">
+      <circle cx="16" cy="16" r="16" fill="#102038"/>
+      <path d="M16 3C9.373 3 4 8.373 4 15c0 2.388.75 4.594 2.06 6.46L4 29l7.768-2.05A12.95 12.95 0 0 0 16 27c6.627 0 12-5.373 12-12S22.627 3 16 3z" fill="#25D366"/>
+      <path d="M22 19.2a9.742 9.742 0 0 1-5.1 1.451c-2.117 0-4.099-.676-5.81-1.833l.233-.847c.2-.729.901-1.178 1.635-1.065l1.298.2c.245.029.499-.044.699-.188l1.204-.842c.231-.16.528-.092.713.152.516.682 1.819 2.29 2.203 2.816.219.302.092.732-.263.846z" fill="#FFF"/>
+    </svg>
+  </a>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>Cedentic Technologies © 2026</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<style>
+  body {
+    background: linear-gradient(120deg, #101526 0%, #192B48 100%);
+    min-height: 100vh;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  }
+  .hero-section {
+    position: relative;
+    text-align: center;
+    padding: 4.6em 0 4em 0;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 650px;
+    background: radial-gradient(circle at 60% 40%, #34e89e55 30%, #22c1c355 60%, rgba(32,32,64,0.12) 100%);
+    filter: blur(80px) saturate(140%);
+    opacity: 0.75;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 0 1.6em;
+  }
+  .hero-logo {
+    width: 98px;
+    height: 98px;
+    box-shadow: 0 0 40px #25d36688, 0 8px 40px #102a4422;
+    border-radius: 32px;
+    margin-bottom: 1.1em;
+    animation: logo-glow 1.8s ease-in-out infinite alternate;
+  }
+  @keyframes logo-glow {
+    from { box-shadow: 0 0 24px #25d36633, 0 0 12px #0000; }
+    to   { box-shadow: 0 0 52px #25d366bb, 0 8px 40px #102a4433; }
+  }
+  .hero-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #fafafd;
+    margin-bottom: 0.19em;
+    text-shadow: 0 2px 22px #20eea422;
+  }
+  .hero-tagline {
+    font-size: 1.1rem;
+    color: #93ffd7;
+    margin-bottom: .88em;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-shadow: 0 2px 22px #21cb9972;
+    animation: fadeInUp 700ms cubic-bezier(.23,1.14,.32,1) 0.48s backwards;
+  }
+  .hero-subtitle {
+    font-size: 1.48rem;
+    font-weight: 600;
+    color: #c7ffe8;
+    margin-bottom: 0.6em;
+    line-height: 1.3;
+  }
+  .hero-services {
+    font-size: 1.09rem;
+    color: #c0cdf8;
+    margin-bottom: 1.39em;
+    letter-spacing: 0.045em;
+  }
+  .dot {
+    color: #21cb99;
+    margin: 0 0.35em;
+    font-size: 1.2em;
+    vertical-align: middle;
+  }
+  .cta-btn {
+    display: inline-block;
+    padding: 0.95em 2.3em;
+    font-size: 1.13rem;
+    border-radius: 28px;
+    background: linear-gradient(90deg, #21cb99 12%, #1edea2 98%);
+    color: #133547;
+    font-weight: 700;
+    box-shadow: 0 4px 32px #22ffb933;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.18s, box-shadow 0.18s, transform 0.2s;
+    text-decoration: none;
+    margin-top: 1.25em;
+  }
+  .cta-btn:hover, .cta-btn:focus-visible {
+    background: linear-gradient(90deg, #1edea2 0%, #21cb99 100%);
+    box-shadow: 0 8px 26px #21cb9950, 0 1.5px 8px #0f1b2340;
+    transform: translateY(-2px) scale(1.03);
+    color: #122933;
+  }
+  /* Stats Section */
+  .stats-section {
+    background: rgba(36,64,82,0.83);
+    border-radius: 24px;
+    margin: 3.7em auto 2.8em auto;
+    padding: 2.3em 1.3em;
+    max-width: 690px;
+    box-shadow: 0 4px 36px #21cb9917, 0 1.5px 12px #0f1b2332;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  .stats-cards {
+    display: flex;
+    gap: 3.5em;
+    justify-content: center;
+    width: 100%;
+  }
+  .stat-card {
+    text-align: center;
+    padding: 0.6em 0.9em;
+    min-width: 114px;
+    border-radius: 12px;
+    background: linear-gradient(110deg, #233045 75%, #23e0a9 100%);
+    box-shadow: 0 2px 24px #21cb9922;
+    transition: transform 0.16s;
+    will-change: transform;
+    border: 1.5px solid #1edea222;
+  }
+  .stat-card:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 32px #20edac44;
+  }
+  .stat-value {
+    font-size: 2.13rem;
+    font-weight: 800;
+    color: #21cb99;
+    display: block;
+    line-height: 1.18;
+    margin-bottom: 0.2em;
+    text-shadow: 0 2px 8px #25d36638;
+    letter-spacing: -2px;
+  }
+  .stat-label {
+    font-size: 1.1rem;
+    color: #f7f9fa;
+    opacity: 0.83;
+    font-weight: 500;
+    letter-spacing: .01em;
+  }
+  .trust-section {
+    margin: 2.9em 0 2.2em 0;
+    text-align: center;
+  }
+  .trust-text {
+    color: #93ffd7;
+    font-weight: 700;
+    font-size: 1.19rem;
+    letter-spacing: 0.13em;
+    background: rgba(33,203,153,0.12);
+    padding: 0.9em 1.7em;
+    border-radius: 14px;
+    display: inline-block;
+    font-family: inherit;
+    box-shadow: 0 2px 16px #20edac19;
+    border: 1.5px solid #21cb9933;
+    margin: 0;
+  }
+  .why-section {
+    padding: 2.5em 0 2.7em 0;
+    background: none;
+    text-align: center;
+  }
+  .why-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #e0f5e6;
+    margin-bottom: 1.6em;
+    letter-spacing: -.04em;
+    text-shadow: 0 1.5px 12px #20edac16;
+  }
+  .why-cards {
+    display: flex;
+    gap: 2.5em;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+  .why-card {
+    background: linear-gradient(115deg, #212a44 92%, #1edea2 110%);
+    border-radius: 15px;
+    box-shadow: 0 2px 24px #21cb991a;
+    padding: 2.6em 1.25em 2.2em 1.25em;
+    width: 280px;
+    max-width: 94vw;
+    margin-bottom: 1.2em;
+    transition: transform .18s, box-shadow .17s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border: 1.5px solid #1edea222;
+    overflow: hidden;
+  }
+  .why-card:hover {
+    transform: translateY(-5px) scale(1.035);
+    box-shadow: 0 7px 32px #20edac29, 0 2px 8px #21cb9950;
+  }
+  .why-icon {
+    font-size: 2.8rem;
+    margin-bottom: 1.1em;
+    color: #65e4a3;
+    filter: drop-shadow(0 0 7px #1edea480);
+  }
+  .why-text {
+    font-size: 1.15rem;
+    color: #cce6f4;
+    font-weight: 600;
+    line-height: 1.65;
+    text-align: center;
+    text-shadow: 0 2px 16px #37e8a444;
+    margin: 0;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 900px) {
+    .stats-cards { flex-direction: column; gap: 2em; }
+    .stat-card { margin-bottom: 1em; }
+  }
+  @media (max-width: 600px) {
+    .hero-title { font-size: 2rem; }
+    .hero-subtitle { font-size: 1.14rem; }
+    .why-title { font-size: 1.36rem; }
+    .why-card { width: 99vw; max-width: 99vw; padding: 2em 0.7em; }
+    .stats-section { padding: 1.2em 0.4em; }
+  }
+</style>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof AOS !== 'undefined' && AOS.init) {
+      AOS.init();
+    }
+  });
+</script>
+<!-- Floating Back Button -->
+<button id="backButton" aria-label="Go back" title="Go back" onclick="window.history.back()">
+  <span class="back-arrow" aria-hidden="true">&#8592;</span>
+</button>
+<style>
+  #backButton {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(39, 53, 69, 0.48);
+    box-shadow: 0 2px 14px 0 rgba(52,240,206,0.18), 0 0.5px 4px 0 rgba(30,222,164,0.11);
+    backdrop-filter: blur(9px);
+    color: #65e4a3;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: 
+      background 0.18s, 
+      transform 0.16s cubic-bezier(.32,2.2,.8,.68), 
+      box-shadow 0.19s;
+    outline: none;
+  }
+  #backButton:hover, #backButton:focus-visible {
+    background: rgba(46, 72, 97, 0.65);
+    transform: translateY(-2px) scale(1.11);
+    box-shadow: 0 4px 20px 0 rgba(60,247,207,0.13), 0 0.5px 10px 0 rgba(30,222,164,0.10);
+  }
+  .back-arrow {
+    font-size: 1.29em;
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    font-weight: bold;
+    display: inline-block;
+    filter: drop-shadow(0 1px 4px #1edea455);
+  }
+  @media (max-width: 600px) {
+    #backButton {
+      top: 18px;
+      left: 10px;
+      width: 38px;
+      height: 38px;
+      font-size: 1.11rem;
+    }
+    .back-arrow {
+      font-size: 1.02em;
+    }
+  }
+</style>

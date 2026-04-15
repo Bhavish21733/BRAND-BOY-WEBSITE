@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Services | Cedentic Technologies</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Modern, Professional Look -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-bg">
+    <!-- Header (Same as Homepage) -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Cedentic Technologies</a>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="services.html" class="active">Services</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <main>
+        <section class="services-section">
+            <div class="container">
+                <h1 class="section-title">Our Premium Services</h1>
+                <div class="services-cards">
+                    <!-- Web Development -->
+                    <div class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h2>Web Development</h2>
+                        <p>
+                            Building stunning, high-performance websites that engage users and drive results. We blend modern design with robust backends to create responsive, secure, and scalable online experiences.
+                        </p>
+                    </div>
+                    <!-- Custom Software Development -->
+                    <div class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h2>Custom Software Development</h2>
+                        <p>
+                            We develop tailor-made software solutions to solve complex business challenges. From enterprise platforms to MVPs, our agile team delivers reliable code and seamless integrations.
+                        </p>
+                    </div>
+                    <!-- Digital Marketing -->
+                    <div class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h2>Digital Marketing</h2>
+                        <p>
+                            Boost your brand’s visibility and customer reach with targeted digital strategies. We offer comprehensive SEO, social media management, and performance-driven campaigns for maximum ROI.
+                        </p>
+                    </div>
+                    <!-- College Projects -->
+                    <div class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h2>College Projects</h2>
+                        <p>
+                            Guiding students through real-world college projects, from ideation to deployment. We ensure academic success with expert mentorship and practical implementation support.
+                        </p>
+                    </div>
+                    <!-- Internships & Training -->
+                    <div class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h2>Internships & Training</h2>
+                        <p>
+                            Bridging knowledge with industry practice through hands-on internships and professional training. Our programs equip talents with the latest tech skills and real-world exposure.
+                        </p>
+                    </div>
+                    <!-- Mentoring -->
+                    <div class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h2>Mentoring</h2>
+                        <p>
+                            Personalized mentorship for students and professionals. We guide your tech journey, offering career advice and helping you achieve both academic and professional goals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer (Same as Homepage) -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Cedentic Technologies. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Minimal responsive CSS for dark modern UI - can be placed in style.css -->
+    <style>
+        body.dark-bg {
+            background: #121212;
+            color: #f6f7fa;
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+        .header, .footer {
+            background: #1f1f1f;
+            box-shadow: 0 2px 6px #0001;
+        }
+        .header .logo {
+            font-size: 1.7rem;
+            font-weight: bold;
+            color: #65e4a3;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        .nav {
+            float: right;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #fff;
+            margin-left: 1.5em;
+            font-weight: 500;
+            padding: 0.5em;
+            transition: color .2s;
+        }
+        .nav a.active, .nav a:hover {
+            color: #65e4a3;
+        }
+        @media (max-width: 800px) {
+            .nav {
+                float: none;
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav a { margin-left: 0; margin-bottom: 8px;}
+        }
+        .services-section {
+            padding: 48px 0 52px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5em;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #65e4a3;
+            letter-spacing: 1px;
+        }
+        .services-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+            justify-content: space-between;
+        }
+        .service-card {
+            background: #22232b;
+            border-radius: 17px;
+            box-shadow: 0 3px 16px #0003;
+            flex: 1 1 300px;
+            min-width: 270px;
+            max-width: 32%;
+            margin-bottom: 2em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2.2em 1.5em 2em 1.5em;
+            transition: box-shadow .2s, transform .2s;
+        }
+        .service-card:hover {
+            box-shadow: 0 6px 24px #21cb9966;
+            transform: translateY(-5px) scale(1.03);
+        }
+        .icon-wrapper {
+            font-size: 2.8rem;
+            margin-bottom: 1em;
+            color: #65e4a3;
+        }
+        .service-card h2 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5em;
+            font-weight: 600;
+            color: #f6f7fa;
+        }
+        .service-card p {
+            font-size: 1.01rem;
+            line-height: 1.6;
+            color: #c7c7d9;
+            margin-bottom: 0;
+            text-align: center;
+        }
+        .footer {
+            text-align: center;
+            padding: 1.4em 0;
+            font-size: 1.05rem;
+            color: #888aa0;
+            border-top: 1px solid #232323;
+        }
+        @media (max-width: 1000px) {
+            .services-cards {
+                gap: 1.1em;
+            }
+            .service-card {
+                max-width: 47%;
+                min-width: 80vw;
+            }
+        }
+        @media (max-width: 700px) {
+            .services-cards {
+                flex-direction: column;
+                gap: 1.5em;
+                align-items: center;
+            }
+            .service-card {
+                max-width: 95vw;
+            }
+        }
+    </style>
+</body>
+<!-- SERVICE PAGE END -->
+<!-- Enhanced Services Section Footer & Animations -->
+<footer class="footer">
+  <span>Cedentic Technologies © 2026</span>
+</footer>
+
+<!-- UI/UX ENHANCEMENTS - EXTRA CSS & AOS -->
+<style>
+  .services-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.2em;
+    justify-content: center;
+    margin: 3em 0 2em 0;
+  }
+  .service-card {
+    background: linear-gradient(120deg, #16192B 0%, #1A2240 100%);
+    border-radius: 1.2em;
+    box-shadow: 0 4px 22px #1edea127, 0 0.5px 1px #151c27;
+    padding: 2.7em 2.1em 2em 2.1em;
+    margin: 0.5em 0;
+    max-width: 420px;
+    width: 100%;
+    min-width: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.19s, transform 0.18s, background 0.28s;
+    position: relative;
+    border: 1.5px solid #00e39a22;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .service-card:hover, .service-card:focus-visible {
+    box-shadow: 0 9px 38px #18e29e49, 0 2px 20px #1edea444;
+    transform: translateY(-10px) scale(1.045) rotate(-0.1deg);
+    background: linear-gradient(120deg, #222842 0%, #20304e 100%);
+    border-color: #32fcba88;
+  }
+  .icon-wrapper {
+    font-size: 3.1rem;
+    margin-bottom: 1.18em;
+    margin-top: 0.2em;
+    color: #65e4a3;
+    filter: drop-shadow(0 0 7px #1edea480);
+    transition: filter 0.22s;
+  }
+  .service-card:hover .icon-wrapper {
+    filter: drop-shadow(0 0 27px #1edea499) brightness(1.15);
+  }
+  .service-card h2 {
+    font-size: 1.55rem;
+    margin-bottom: 0.67em;
+    font-weight: 700;
+    color: #f6f7fa;
+    text-align: center;
+    letter-spacing: -0.5px;
+  }
+  .service-card p {
+    font-size: 1.08rem;
+    line-height: 1.75;
+    color: #c7c7d9;
+    margin-bottom: 0;
+    margin-top: 0.3em;
+    text-align: center;
+    max-width: 330px;
+    text-shadow: 0 2px 12px #14f03811;
+  }
+  @media (max-width: 1000px) {
+    .services-cards {
+      gap: 1.7em;
+      margin: 2em 0 1.2em 0;
+    }
+    .service-card {
+      max-width: 96vw;
+      min-width: 80vw;
+      padding: 2em 1em 1.5em 1em;
+    }
+  }
+  @media (max-width: 700px) {
+    .services-cards {
+      flex-direction: column;
+      gap: 1.7em;
+      align-items: center;
+    }
+    .service-card {
+      max-width: 99vw;
+      min-width: 90vw;
+      padding: 2.3em 1.1em 1.55em 1.1em;
+    }
+  }
+</style>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof AOS !== 'undefined' && AOS.init) {
+      AOS.init();
+    }
+  });
+</script>
+</html>
